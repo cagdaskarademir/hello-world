@@ -1,0 +1,60 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact: {}
+  description: A simple Hello World API with health checks
+  title: Hello World API
+  version: "1.0"
+paths:
+  /health/liveness:
+    get:
+      description: Returns 200 OK if the service is alive
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Liveness check endpoint
+      tags:
+      - health
+  /health/readiness:
+    get:
+      description: Returns 200 OK if the service is ready to handle requests
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Readiness check endpoint
+      tags:
+      - health
+  /say/{name}:
+    get:
+      description: Returns a greeting message for the given name
+      parameters:
+      - description: Name to greet
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Say hello to someone
+      tags:
+      - hello
+swagger: "2.0"
