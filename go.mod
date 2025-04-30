@@ -1,4 +1,4 @@
-module github.com/fasya/hello-world
+module github.com/cagdaskarademir/hello-world
 
 go 1.23.0
 

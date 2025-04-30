@@ -23,7 +23,7 @@ A simple Go API with health checks and hello endpoint, built with Gin framework.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/fasya/hello-world.git
+git clone https://github.com/cagdaskarademir/hello-world.git
 cd hello-world
 ```
 

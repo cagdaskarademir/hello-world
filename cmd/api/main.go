@@ -4,9 +4,9 @@ import (
 	"log"
 	"os"
 
-	_ "github.com/fasya/hello-world/docs"
-	"github.com/fasya/hello-world/internal/handlers"
-	"github.com/fasya/hello-world/internal/middleware"
+	_ "github.com/cagdaskarademir/hello-world/docs"
+	"github.com/cagdaskarademir/hello-world/internal/handlers"
+	"github.com/cagdaskarademir/hello-world/internal/middleware"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
