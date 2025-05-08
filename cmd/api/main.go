@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-
+	"net/http"
 	_ "github.com/cagdaskarademir/hello-world/docs"
 	"github.com/cagdaskarademir/hello-world/internal/handlers"
 	"github.com/cagdaskarademir/hello-world/internal/middleware"
@@ -23,6 +23,11 @@ func main() {
 	// Add middleware
 	router.Use(middleware.Logger())
 	router.Use(middleware.CORS())
+
+	// Redirect root to Swagger UI
+	router.GET("/", func(c *gin.Context) {
+		c.Redirect(http.StatusMovedPermanently, "/swagger/index.html")
+	})
 
 	// API v1 group
 	v1 := router.Group("/api/v1")
