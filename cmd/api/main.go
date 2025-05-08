@@ -24,7 +24,7 @@ func main() {
 	router.Use(middleware.Logger())
 	router.Use(middleware.CORS())
 
-	// Redirect root to Swagger UI
+	// Redirect root to Swagger UI path
 	router.GET("/", func(c *gin.Context) {
 		c.Redirect(http.StatusMovedPermanently, "/swagger/index.html")
 	})
